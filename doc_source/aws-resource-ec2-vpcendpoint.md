@@ -154,6 +154,7 @@ The following example specifies a VPC endpoint that allows only the s3:GetObject
    },
    "RouteTableIds" : [ {"Ref" : "routetableA"}, {"Ref" : "routetableB"} ],
    "ServiceName" : { "Fn::Sub": "com.amazonaws.${AWS::Region}.s3" },
+   "VpcEndpointType" : "Interface"
    "VpcId" : {"Ref" : "VPCID"}
  }
 }
@@ -177,5 +178,6 @@ Properties:
     - !Ref routetableA
     - !Ref routetableB
   ServiceName: !Sub com.amazonaws.${AWS::Region}.s3
+  VpcEndpointType: Interface
   VpcId: !Ref VPCID
 ```
